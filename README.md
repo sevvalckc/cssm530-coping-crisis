@@ -59,17 +59,17 @@ to blame, help-seeking, and solidarity patterns across time?
 ---
 
 ## Requirements
-transformers==4.40.0
-datasets==2.19.0
-torch==2.3.0
-scikit-learn==1.4.2
-pandas==2.2.2
-numpy==1.26.4
-scipy==1.13.0
-seaborn==0.13.2
-matplotlib==3.8.4
-openai==1.30.0
-statsmodels==0.14.2
+- transformers==4.40.0
+- datasets==2.19.0
+- torch==2.3.0
+- scikit-learn==1.4.2
+- pandas==2.2.2
+- numpy==1.26.4
+- scipy==1.13.0
+- seaborn==0.13.2
+- matplotlib==3.8.4
+- openai==1.30.0
+- statsmodels==0.14.2
 
 ---
 
