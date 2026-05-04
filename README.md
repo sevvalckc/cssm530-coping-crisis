@@ -71,15 +71,19 @@ BERTurk's advantage over the zero-shot baseline is statistically significant for
 | File | Description |
 |------|-------------|
 | `cssm530_coping_crisis.ipynb` | Full analysis pipeline (sampling → annotation → BERTurk → inference → visualization) |
-| `cssm530_gold_standard.csv` | 500 annotated tweets with gold standard labels |
-| `cssm530_kappa_results.csv` | Pairwise inter-annotator agreement results |
-| `cssm530_model_comparison.csv` | BERTurk vs. zero-shot performance comparison |
-| `cssm530_mcnemar.csv` | McNemar test results per label |
-| `cssm530_test_results.csv` | Test set evaluation metrics |
-| `fig1_temporal_coping.png` | Daily coping style distribution (Feb 6 – Mar 6) |
-| `fig2_phase_coping.png` | Mean coping rate by crisis phase |
-| `fig3_engagement.png` | Coping styles × engagement metrics (Spearman r) |
-| `fig4_emotion_heatmap.png` | Politus emotion scores × coping styles heatmap |
+| `requirements.txt` | Python dependency list |
+| **data/** | |
+| `data/cssm530_gold_standard.csv` | 500 annotated tweets with gold standard labels |
+| `data/cssm530_kappa_results.csv` | Pairwise inter-annotator agreement results |
+| `data/cssm530_model_comparison.csv` | BERTurk vs. zero-shot performance comparison |
+| `data/cssm530_mcnemar.csv` | McNemar test results per label |
+| `data/cssm530_test_results.csv` | Test set evaluation metrics |
+| `data/cssm530_gpt_annotated.csv` | GPT-4o annotations for full 500-tweet sample |
+| **figures/** | |
+| `figures/fig1_temporal_coping.png` | Daily coping style distribution (Feb 6 – Mar 6) |
+| `figures/fig2_phase_coping.png` | Mean coping rate by crisis phase |
+| `figures/fig3_engagement.png` | Coping styles × engagement metrics (Spearman r) |
+| `figures/fig4_emotion_heatmap.png` | Politus emotion scores × coping styles heatmap |
 
 ---
 
