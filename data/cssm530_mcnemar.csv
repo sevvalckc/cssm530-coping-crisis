@@ -1,0 +1,4 @@
+label,b_bert_wins,c_zs_wins,pvalue,significant
+problem_focused,35,9,0.0001,True
+emotion_focused,24,14,0.1433,False
+meaning_making,16,10,0.3269,False
