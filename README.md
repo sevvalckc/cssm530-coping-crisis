@@ -43,6 +43,7 @@ BERTurk's advantage over the zero-shot baseline is statistically significant for
 3. Meaning-making increases monotonically across all phases (0.12 → 0.24 → 0.35 → 0.37)
 4. Anger correlates most strongly with meaning-making (Spearman r = 0.387, p < .05) — suggesting it functions as a mobilizing force toward blame attribution rather than practical action
 5. Coping dynamics are not context-free: the political landscape of the 2023 earthquake shapes the particularly strong rise of meaning-making observed in this dataset
+6. Demographic variation exists across coping styles: younger users show higher problem-focused rates, older users show higher emotion-focused and meaning-making rates; organizational accounts show markedly lower meaning-making than personal accounts (0.129 vs. 0.228)
 
 ---
 
@@ -71,6 +72,7 @@ BERTurk's advantage over the zero-shot baseline is statistically significant for
 | File | Description |
 |------|-------------|
 | `cssm530_coping_crisis.ipynb` | Full analysis pipeline (sampling → annotation → BERTurk → inference → visualization) |
+| demographic_analysis.py | Demographic variation analysis (gender, age, account type) |
 | `requirements.txt` | Python dependency list |
 | **data/** | |
 | `data/cssm530_gold_standard.csv` | 500 annotated tweets with gold standard labels |
@@ -84,6 +86,7 @@ BERTurk's advantage over the zero-shot baseline is statistically significant for
 | `figures/fig2_phase_coping.png` | Mean coping rate by crisis phase |
 | `figures/fig3_engagement.png` | Coping styles × engagement metrics (Spearman r) |
 | `figures/fig4_emotion_heatmap.png` | Politus emotion scores × coping styles heatmap |
+| figures/fig5_demographic_coping.png | Coping styles by demographic groups |
 
 ---
 
