@@ -1,9 +1,9 @@
 # Coping in Crisis
-## Computational Modeling of Coping Styles in Digital Crisis Discourse
+## Computational Modeling of Coping Styles in Digital Crisis Discourse During the 2023 Türkiye Earthquake
 
-**CSSM 530 — Automated Text Processing for Social Sciences | Spring 2026**  
-**Author:** Şevval Çakıcı | Koç University  
-**Domain Expert:** Assoc. Prof. Merih Angın | Koç University  
+**CSSM 530 — Automated Text Processing for Social Sciences | Spring 2026**
+**Author:** Şevval Çakıcı | Koç University
+**Domain Expert:** Assoc. Prof. Merih Angın | Koç University
 
 ---
 
@@ -41,9 +41,9 @@ BERTurk's advantage over the zero-shot baseline is statistically significant for
 1. Problem-focused coping dominates Phase 1 (mean rate: 0.562) and declines sharply across phases — reflecting the exhaustion of rescue coordination needs
 2. Emotion-focused coping rises from Phase 1 (0.320) and stabilizes in Phases 3–4 (0.54–0.57)
 3. Meaning-making increases monotonically across all phases (0.12 → 0.24 → 0.35 → 0.37)
-4. Anger correlates most strongly with meaning-making (Spearman r = 0.387, p < .05) — suggesting it functions as a mobilizing force toward blame attribution rather than practical action
-5. Coping dynamics are not context-free: the political landscape of the 2023 earthquake shapes the particularly strong rise of meaning-making observed in this dataset
-6. Demographic variation exists across coping styles: younger users show higher problem-focused rates, older users show higher emotion-focused and meaning-making rates; organizational accounts show markedly lower meaning-making than personal accounts (0.129 vs. 0.228)
+4. Anger correlates most strongly with meaning-making (Spearman r = 0.387) — suggesting it functions as a mobilizing force toward blame attribution rather than practical action
+5. Demographic variation exists across coping styles: younger users show higher problem-focused rates, older users show higher emotion-focused and meaning-making rates; organizational accounts show markedly lower meaning-making than personal accounts (0.129 vs. 0.228)
+6. Coping dynamics are not context-free: the political landscape of the 2023 earthquake shapes the particularly strong rise of meaning-making observed in this dataset
 
 ---
 
@@ -52,7 +52,7 @@ BERTurk's advantage over the zero-shot baseline is statistically significant for
 - **Source:** Politus corpus — Yörük, E., Hürriyetoğlu, A., Kına, M. F., Duruşan, F., Yardı, M. C., Atsızelti, Ş., et al. (2024). *Politus Dataset: A Political Public Opinion Dataset from Social Media in Turkey Processed with Privacy-Preserving AI.* figshare. https://doi.org/10.6084/m9.figshare.28027961.v3
 - **Size:** 1,037,663 Turkish-language original tweets (Feb 6 – Mar 6, 2023)
 - **Keywords:** #deprem, #6Şubat, #KahramanmaraşDepremi, #Kahramanmaraş, #Gaziantep, "deprem yardım", "enkaz", "AFAD", "earthquake Turkey"
-- **Annotation:** 500 tweets labeled independently by 3 human annotators + GPT-4o (multi-label, majority vote gold standard)
+- **Annotation:** 500 tweets; 50 labeled by 3 human annotators (majority vote gold standard), 450 labeled by GPT-4o (validated by high human-GPT agreement: 96%, 96%, 86%)
 
 ---
 
@@ -72,7 +72,7 @@ BERTurk's advantage over the zero-shot baseline is statistically significant for
 | File | Description |
 |------|-------------|
 | `cssm530_coping_crisis.ipynb` | Full analysis pipeline (sampling → annotation → BERTurk → inference → visualization) |
-| demographic_analysis.py | Demographic variation analysis (gender, age, account type) |
+| `demographic_analysis.py` | Demographic variation analysis (gender, age group, account type) |
 | `requirements.txt` | Python dependency list |
 | **data/** | |
 | `data/cssm530_gold_standard.csv` | 500 annotated tweets with gold standard labels |
@@ -84,9 +84,9 @@ BERTurk's advantage over the zero-shot baseline is statistically significant for
 | **figures/** | |
 | `figures/fig1_temporal_coping.png` | Daily coping style distribution (Feb 6 – Mar 6) |
 | `figures/fig2_phase_coping.png` | Mean coping rate by crisis phase |
-| `figures/fig3_engagement.png` | Coping styles × engagement metrics (Spearman r) |
-| `figures/fig4_emotion_heatmap.png` | Politus emotion scores × coping styles heatmap |
-| figures/fig5_demographic_coping.png | Coping styles by demographic groups |
+| `figures/fig3_demographic_coping.png` | Coping styles by gender, age group, and account type |
+| `figures/fig4_engagement.png` | Coping styles × engagement metrics (Spearman r) |
+| `figures/fig5_emotion_heatmap.png` | Politus emotion scores × coping styles heatmap |
 
 ---
 
@@ -95,54 +95,3 @@ BERTurk's advantage over the zero-shot baseline is statistically significant for
 This project was developed in Google Colab with GPU support (Tesla T4).
 
 **1. Clone the repository**
-```bash
-git clone https://github.com/sevvalckc/cssm530-coping-crisis.git
-```
-
-**2. Install dependencies**
-```bash
-pip install -r requirements.txt
-```
-
-**3. Data access**  
-The Politus corpus is not included in this repository due to size and data sharing constraints. To replicate the full pipeline, access the corpus via the Politus Dataset DOI above or contact the Politus team directly.
-
-**4. API keys**  
-GPT-4o annotation (Section 5 of the notebook) requires an OpenAI API key. Add it as a Colab secret named `OPENAI_API_KEY`.
-
-**5. Run the notebook**  
-Open `cssm530_coping_crisis.ipynb` in Google Colab, mount your Google Drive, and run cells sequentially. GPU runtime is required for BERTurk fine-tuning and corpus inference.
-
----
-
-## Requirements
-
-See `requirements.txt` for full dependency list. Core dependencies:
-
-| Library | Version |
-|---------|---------|
-| Python | 3.12 |
-| PyTorch | 2.3.0 |
-| Transformers | 4.40.0 |
-| scikit-learn | 1.4.2 |
-| pandas | 2.2.2 |
-| openai | 1.30.0 |
-| statsmodels | 0.14.2 |
-
----
-
-## References
-
-- Lazarus, R. S., & Folkman, S. (1984). *Stress, appraisal, and coping.* Springer.
-- Schweter, S. (2020). BERTurk — BERT models for Turkish. Zenodo. https://doi.org/10.5281/zenodo.3770924
-- Jin, Y. (2009). The effects of public's cognitive appraisal of emotions in crises on crisis coping and strategy assessment. *Public Relations Review, 35*(3), 310–313.
-- Coombs, W. T. (2015). *Ongoing crisis communication* (4th ed.). SAGE.
-- Hovy, D., & Spruit, S. L. (2016). The social impact of natural language processing. *ACL 2016.*
-- Yörük, E., et al. (2024). Politus Dataset. figshare. https://doi.org/10.6084/m9.figshare.28027961.v3
-
----
-
-## License
-
-This repository is shared for academic and research purposes.  
-Data used in this study belongs to the Politus project and is subject to their data sharing terms.
